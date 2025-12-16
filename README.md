@@ -1,27 +1,16 @@
-# Audit Assistant – Agentic AI Project
+# Audit Assistant (Agentic AI)
 
-This project is an **Agentic AI Assistant** built for the *Agentic AI* course final assessment.
-
-It demonstrates:
-- LLM reasoning
-- Tool usage (RAG, CSV / data tools)
-- Memory
-- Deployment with Docker (Ollama + API)
+Local setup for the Audit Assistant (API + Ollama) using Docker Compose.
 
 ## Prerequisites
+- Git
+- Docker Desktop
 
-You need to have installed:
-- **Git**
-- **Docker Desktop**
-
-No local Python or Ollama installation is required.
-
-## Project Structure
-
+## Project layout
 ```text
 audit-assistant/
 ├── docker-compose.yml
-├── Dockerfile
-├── app/
-├── data/          # PDFs / CSVs go here
+├── .env.example
+├── .env               # local only (do not commit)
+├── data/              # place PDFs/CSVs here (mounted into the container)
 └── README.md
