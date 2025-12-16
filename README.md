@@ -8,8 +8,6 @@ It demonstrates:
 - Memory
 - Deployment with Docker (Ollama + API)
 
----
-
 ## Prerequisites
 
 You need to have installed:
@@ -17,8 +15,6 @@ You need to have installed:
 - **Docker Desktop**
 
 No local Python or Ollama installation is required.
-
----
 
 ## Project Structure
 
