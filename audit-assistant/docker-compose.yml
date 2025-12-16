@@ -1,0 +1,27 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  api:
+    build: .
+    container_name: audit-api
+    ports:
+      - "8000:8000"
+    environment:
+      # Faz a lib do ollama no Python falar com o serviço ollama do compose
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      # Para poderes atualizar PDFs sem rebuild
+      - ./data:/app/data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
