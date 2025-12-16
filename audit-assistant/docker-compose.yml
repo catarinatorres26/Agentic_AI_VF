@@ -22,6 +22,8 @@ services:
     depends_on:
       - ollama
     restart: unless-stopped
+    env_file:
+      - .env
 
 volumes:
   ollama_data:
